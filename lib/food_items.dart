@@ -121,11 +121,7 @@ class MealPlansDB {
       );
     });
   }
-  
-  Futute<MealPlans> getMeal(int id) async {
-    final db = await database;
-    return MealPlans(id: id, date: date, cals: cals, food: food)
-  }
+
 
   Future<void> insertMealPlan(MealPlans mealPlans) async {
     final db = await database;

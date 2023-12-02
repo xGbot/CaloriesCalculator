@@ -59,8 +59,6 @@ class _EditPlanState extends State<EditPlan> {
   Widget build(BuildContext context) {
     int? passedID = ModalRoute.of(context)!.settings.arguments as int?;
 
-    double targetCals =
-
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
