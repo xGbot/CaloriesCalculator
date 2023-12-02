@@ -122,6 +122,18 @@ class MealPlansDB {
     });
   }
 
+  Future<List<MealPlans>> getMealPlan(int id) async {
+    final db = await database;
+    final List<Map<String, dynamic>> maps = await db.query(tableName, where: 'id = ?', whereArgs: [id]);
+    return List.generate(maps.length, (i) {
+      return MealPlans(
+          id: maps[i]['id'] as int,
+          date: maps[i]['date'] as String,
+          cals: maps[i]['cals'] as double,
+          food: maps[i]['food'] as String
+      );
+    });
+  }
 
   Future<void> insertMealPlan(MealPlans mealPlans) async {
     final db = await database;

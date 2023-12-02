@@ -53,7 +53,7 @@ class _HomeState extends State<Home> {
                 return DataRow(
                   selected: true,
                   onLongPress: () {
-                    Navigator.pushNamed(context, '/edit_plan', arguments: meal.id);
+                    dbMeals.deleteMealPlan(meal.id);
                     setState(() {
                       getMealsFromDB();
                     });

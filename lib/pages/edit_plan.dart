@@ -58,6 +58,7 @@ class _EditPlanState extends State<EditPlan> {
   @override
   Widget build(BuildContext context) {
     int? passedID = ModalRoute.of(context)!.settings.arguments as int?;
+    final editMP = dbMeals.getMealPlan(passedID!);
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
